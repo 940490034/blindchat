@@ -1,4 +1,4 @@
-var express = require('express') ;
+var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -39,6 +39,6 @@ io.on('connection', function(socket) {
 });
 
 
-http.listen(3000, function() {
-	console.log('3000端口已开启');
+http.listen(process.env.PORT || 5000, function() {
+	console.log('端口已开启');
 });
